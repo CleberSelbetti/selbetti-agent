@@ -1,15 +1,8 @@
-class SebettiAgent extends HTMLElement {
+class SelbettiAgent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
     this.isOpen = false;
-  }
-
-  async setFiles(schema, data) {
-    this.schemaFile = schema;
-    this.dataFile = data;
-
-    await this.uploadFiles();
   }
 
   connectedCallback() {
@@ -386,6 +379,13 @@ class SebettiAgent extends HTMLElement {
     container.scrollTop = container.scrollHeight;
   }
 
+  async setFiles(schema, data) {
+    this.schemaFile = schema;
+    this.dataFile = data;
+
+    await this.uploadFiles();
+  }
+
   async uploadFiles() {
     this.floatingBtn.disabled = true;
     const body = {
@@ -457,5 +457,5 @@ class SebettiAgent extends HTMLElement {
   }
 }
 
-customElements.define("selbetti-agent", SebettiAgent);
-export default SebettiAgent;
+customElements.define("selbetti-agent", SelbettiAgent);
+export default SelbettiAgent;
