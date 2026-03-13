@@ -379,13 +379,6 @@ class SelbettiAgent extends HTMLElement {
     container.scrollTop = container.scrollHeight;
   }
 
-  async setFiles(schema, data) {
-    this.schemaFile = schema;
-    this.dataFile = data;
-
-    await this.uploadFiles();
-  }
-
   async uploadFiles() {
     this.floatingBtn.disabled = true;
     const body = {
