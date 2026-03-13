@@ -5,6 +5,13 @@ class SebettiAgent extends HTMLElement {
     this.isOpen = false;
   }
 
+  async setFiles(schema, data) {
+    this.schemaFile = schema;
+    this.dataFile = data;
+
+    await this.uploadFiles();
+  }
+
   connectedCallback() {
     this.apiUrl = this.getAttribute("api-url");
     this.apiKey = this.getAttribute("api-key");
