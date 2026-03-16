@@ -8,8 +8,8 @@ class SelbettiAgent extends HTMLElement {
   connectedCallback() {
     this.apiUrl = this.getAttribute("api-url");
     this.apiKey = this.getAttribute("api-key");
-    this.schemaFile;
-    this.dataFile;
+    this.schemaFile = this.getAttribute("schema-file");
+    this.dataFile = this.getAttribute("data-file");
     this.datasetId = this.getAttribute("dataset-id");
 
     this.shadowRoot.innerHTML = `
