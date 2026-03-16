@@ -391,6 +391,7 @@ class SelbettiAgent extends HTMLElement {
     });
 
     try {
+      console.log(params);
       const response = await fetch(
         `${this.apiUrl}/api-agent/analysis/upload?${params}`,
         {
