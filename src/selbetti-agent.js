@@ -428,7 +428,7 @@ class SelbettiAgent extends HTMLElement {
       const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
           "x-api-key": this.apiKey,
         },
         body: formData,
