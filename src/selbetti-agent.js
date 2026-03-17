@@ -408,13 +408,18 @@ class SelbettiAgent extends HTMLElement {
 
     formData.append("dataset_id", this.datasetId);
 
-    // fetch(`${this.apiUrl}/api-agent/analysis/upload-jsons`, {
-    //   method: "POST",
-    //   headers: {
-    //     "x-api-key": this.apiKey,
-    //   },
-    //   body: formData,
-    // }).then((res) => res.json());
+    const response = await fetch(
+      `${this.apiUrl}/api-agent/analysis/upload-jsons`,
+      {
+        method: "POST",
+        headers: {
+          "x-api-key": this.apiKey,
+        },
+        body: formData,
+      },
+    ).then((res) => res.json());
+
+    this.floatingBtn.disabled = false;
 
     // this.floatingBtn.disabled = true;
     // const body = {
@@ -424,20 +429,20 @@ class SelbettiAgent extends HTMLElement {
     // };
     // console.log("BODY COMPONENTE: " + JSON.stringify(body));
 
-    try {
-      const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "x-api-key": this.apiKey,
-        },
-        body: formData,
-      });
-    } catch (error) {
-      console.error(error);
-    } finally {
-      this.floatingBtn.disabled = false;
-    }
+    // try {
+    //   const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //       "x-api-key": this.apiKey,
+    //     },
+    //     body: formData,
+    //   });
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   this.floatingBtn.disabled = false;
+    // }
   }
 
   async sendQuestion() {
