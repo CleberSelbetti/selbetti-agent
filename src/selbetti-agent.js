@@ -386,7 +386,7 @@ class SelbettiAgent extends HTMLElement {
       schema_file: JSON.stringify(this.schemaFile).replaceAll('"', '\\"'),
       data_file: JSON.stringify(this.dataFile),
     };
-    console.log(body);
+    console.log("BODY COMPONENTE: " + body);
     try {
       const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
         method: "POST",
