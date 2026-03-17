@@ -384,7 +384,7 @@ class SelbettiAgent extends HTMLElement {
     const body = {
       dataset_id: this.datasetId,
       schema_file: JSON.stringify(this.schemaFile).replaceAll('"', '\\"'),
-      data_file: JSON.stringify(this.dataFile),
+      data_file: this.dataFile,
     };
     console.log("BODY COMPONENTE: " + JSON.stringify(body));
     try {
