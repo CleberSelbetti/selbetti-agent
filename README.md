@@ -51,14 +51,15 @@ Descrição dos arquivos:
 
 # Instalação
 
-Inclua o script do widget na página.
+Inclua o script do widget na página, após 
+<app-root></app-root>
 
 Exemplo usando CDN:
 
 ```html
 <script
-  type="module"
-  src="https://cdn.seudominio.com/selbetti-agent/selbetti-agent.js"
+   type="module"
+   src="https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js"
 ></script>
 ```
 
@@ -70,7 +71,8 @@ Adicione o componente no HTML da página.
 
 ```html
 <selbetti-agent
-  api-url="https://api.seudominio.com/chat"
+  id="idAgent"
+  api-url="https://geniahomol.duckdns.org"
   api-key="SUA_API_KEY"
   dataset-id="meu-dataset"
 >
@@ -80,27 +82,6 @@ Adicione o componente no HTML da página.
 Após carregar a página, um botão flutuante aparecerá no canto inferior direito.
 
 Ao clicar nele, o chat será aberto.
-
----
-
-# Atributos do componente
-
-| Atributo   | Obrigatório | Descrição                            |
-| ---------- | ----------- | ------------------------------------ |
-| api-url    | Sim         | URL da API que receberá as perguntas |
-| api-key    | Sim         | Chave de autenticação                |
-| dataset-id | Não         | Identificador do dataset             |
-
-Exemplo:
-
-```html
-<selbetti-agent
-  api-url="https://api.exemplo.com/agent"
-  api-key="123456"
-  dataset-id="faq"
->
-</selbetti-agent>
-```
 
 ---
 
@@ -123,20 +104,21 @@ Exemplo:
     <meta charset="UTF-8" />
 
     <script
-      type="module"
-      src="https://cdn.seudominio.com/selbetti-agent/selbetti-agent.js"
-    ></script>
+         type="module"
+         src="https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js"
+      ></script>
   </head>
 
   <body>
     <h1>Site de exemplo</h1>
 
     <selbetti-agent
-      api-url="https://api.meuservico.com/chat"
-      api-key="123456"
-      dataset-id="faq"
-    >
-    </selbetti-agent>
+        id="idAgent"
+        api-url="https://geniahomol.duckdns.org"
+        api-key="123"
+        dataset-id="meu-dataset"
+      >
+      </selbetti-agent>
   </body>
 </html>
 ```
@@ -158,17 +140,6 @@ Compatível com:
 - Edge
 - Firefox
 - Safari
-
----
-
-# Segurança
-
-Recomendações para produção:
-
-- validar `api-key` no backend
-- aplicar rate limit na API
-- restringir domínios autorizados
-- validar origem das requisições
 
 ---
 
