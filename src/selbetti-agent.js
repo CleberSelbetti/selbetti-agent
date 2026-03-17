@@ -386,7 +386,6 @@ class SelbettiAgent extends HTMLElement {
       schema_file: JSON.stringify(this.schemaFile),
       data_file: JSON.stringify(this.dataFile),
     };
-    console.log("COMPONENTE" + body);
 
     try {
       const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
@@ -395,7 +394,7 @@ class SelbettiAgent extends HTMLElement {
           "Content-Type": "application/json",
           "x-api-key": this.apiKey,
         },
-        body: JSON.stringify(body),
+        body: body,
       });
     } catch (error) {
       console.error(error);
