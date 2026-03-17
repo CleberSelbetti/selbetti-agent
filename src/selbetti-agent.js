@@ -389,17 +389,14 @@ class SelbettiAgent extends HTMLElement {
     console.log("COMPONENTE" + body);
 
     try {
-      const response = await fetch(
-        `${this.apiUrl}/api-agent/analysis/upload}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": this.apiKey,
-          },
-          body: JSON.stringify(body),
+      const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": this.apiKey,
         },
-      );
+        body: JSON.stringify(body),
+      });
     } catch (error) {
       console.error(error);
     } finally {
