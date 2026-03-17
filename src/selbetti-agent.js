@@ -385,7 +385,7 @@ class SelbettiAgent extends HTMLElement {
       schema_file: this.schemaFile,
       data_file: this.dataFile,
     };
-
+    console.log("COMPONENTE" + body);
     const params = new URLSearchParams({
       dataset_id: this.datasetId,
     });
