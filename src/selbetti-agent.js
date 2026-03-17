@@ -409,6 +409,9 @@ class SelbettiAgent extends HTMLElement {
 
     fetch(`${this.apiUrl}/api-agent/analysis/upload-jsons`, {
       method: "POST",
+      headers: {
+        "x-api-key": this.apiKey,
+      },
       body: formData,
     })
       .then((res) => res.json())
