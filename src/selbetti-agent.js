@@ -388,7 +388,6 @@ class SelbettiAgent extends HTMLElement {
     const formData = new FormData();
 
     if (!this._data) return;
-    formData.append("dataset_id", this.datasetId);
 
     formData.append(
       "file1",
@@ -405,6 +404,8 @@ class SelbettiAgent extends HTMLElement {
       }),
       "file2.json",
     );
+
+    formData.append("dataset_id", this.datasetId);
 
     fetch(`${this.apiUrl}/api-agent/analysis/upload-jsons`, {
       method: "POST",
