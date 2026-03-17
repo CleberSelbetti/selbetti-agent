@@ -1,6 +1,6 @@
 {
   "name": "selbetti-agent",
-  "version": "1.0.3",
+  "version": "1.0.25",
   "description": "Web Component agnóstico para enviar JSON para uma API",
   "main": "src/selbetti-agent.js",
   "type": "module"
