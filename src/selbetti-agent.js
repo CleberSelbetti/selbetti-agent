@@ -383,10 +383,8 @@ class SelbettiAgent extends HTMLElement {
     this.floatingBtn.disabled = true;
     const body = {
       dataset_id: this.datasetId,
-      // schema_file: JSON.stringify(this.schemaFile),
-      // data_file: JSON.stringify(this.dataFile),
-      schema_file: "this.schemaFile",
-      data_file: "this.dataFile",
+      schema_file: JSON.stringify(this.schemaFile),
+      data_file: JSON.stringify(this.dataFile),
     };
 
     try {
