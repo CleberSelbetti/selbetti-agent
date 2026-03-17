@@ -126,10 +126,7 @@ Você pode injetar dados dinamicamente no componente:
   <head>
     <meta charset="UTF-8" />
 
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js"
-    ></script>
+    script type="module" src="https://dyq0rpds5yz5d.cloudfront.net"></script>
   </head>
 
   <body>
@@ -158,7 +155,7 @@ function App() {
     const script = document.createElement("script");
     script.type = "module";
     script.src =
-      "https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js";
+      "https://dyq0rpds5yz5d.cloudfront.net";
     document.body.appendChild(script);
   }, []);
 
@@ -194,7 +191,7 @@ onMounted(() => {
   const script = document.createElement("script");
   script.type = "module";
   script.src =
-    "https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js";
+    "https://dyq0rpds5yz5d.cloudfront.net";
   document.body.appendChild(script);
 });
 </script>
@@ -225,7 +222,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const script = document.createElement('script');
     script.type = 'module';
-    script.src = 'https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js';
+    script.src = 'https://dyq0rpds5yz5d.cloudfront.net';
     document.body.appendChild(script);
   }
 
