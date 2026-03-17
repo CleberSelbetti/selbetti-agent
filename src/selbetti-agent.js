@@ -382,18 +382,16 @@ class SelbettiAgent extends HTMLElement {
   async uploadFiles() {
     this.floatingBtn.disabled = true;
     const body = {
+      dataset_id: this.datasetId,
       schema_file: JSON.stringify(this.schemaFile),
       data_file: JSON.stringify(this.dataFile),
     };
     console.log("COMPONENTE" + body);
-    const params = new URLSearchParams({
-      dataset_id: this.datasetId,
-    });
 
     try {
       console.log(params);
       const response = await fetch(
-        `${this.apiUrl}/api-agent/analysis/upload?${params}`,
+        `${this.apiUrl}/api-agent/analysis/upload}`,
         {
           method: "POST",
           headers: {
