@@ -394,7 +394,7 @@ class SelbettiAgent extends HTMLElement {
           "Content-Type": "application/json",
           "x-api-key": this.apiKey,
         },
-        body: body,
+        body: JSON.stringify(body),
       });
     } catch (error) {
       console.error(error);
