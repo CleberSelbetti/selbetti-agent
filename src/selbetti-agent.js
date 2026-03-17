@@ -379,28 +379,59 @@ class SelbettiAgent extends HTMLElement {
     container.scrollTop = container.scrollHeight;
   }
 
+  set data(value) {
+    this._data = value;
+    this.send();
+  }
+
   async uploadFiles() {
-    this.floatingBtn.disabled = true;
-    const body = {
-      dataset_id: this.datasetId,
-      schema_file: JSON.stringify(this.schemaFile).replaceAll('"', '\\"'),
-      data_file: this.dataFile,
-    };
-    console.log("BODY COMPONENTE: " + JSON.stringify(body));
-    try {
-      const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": this.apiKey,
-        },
-        body: JSON.stringify(body),
-      });
-    } catch (error) {
-      console.error(error);
-    } finally {
-      this.floatingBtn.disabled = false;
-    }
+    const formData = new FormData();
+
+    if (!this._data) return;
+
+    formData.append(
+      "file1",
+      new Blob([JSON.stringify(this._data.file1)], {
+        type: "application/json",
+      }),
+      "file1.json",
+    );
+
+    formData.append(
+      "file2",
+      new Blob([JSON.stringify(this._data.file2)], {
+        type: "application/json",
+      }),
+      "file2.json",
+    );
+
+    fetch(`${this.apiUrl}/api-agent/analysis/upload-jsons`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    // this.floatingBtn.disabled = true;
+    // const body = {
+    //   dataset_id: this.datasetId,
+    //   schema_file: JSON.stringify(this.schemaFile).replaceAll('"', '\\"'),
+    //   data_file: this.dataFile,
+    // };
+    // console.log("BODY COMPONENTE: " + JSON.stringify(body));
+    // try {
+    //   const response = await fetch(`${this.apiUrl}/api-agent/analysis/upload`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "x-api-key": this.apiKey,
+    //     },
+    //     body: JSON.stringify(body),
+    //   });
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   this.floatingBtn.disabled = false;
+    // }
   }
 
   async sendQuestion() {
