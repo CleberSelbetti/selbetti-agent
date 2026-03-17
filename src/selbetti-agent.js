@@ -388,6 +388,7 @@ class SelbettiAgent extends HTMLElement {
     const formData = new FormData();
 
     if (!this._data) return;
+    formData.append("dataset_id", this.datasetId);
 
     formData.append(
       "file1",
