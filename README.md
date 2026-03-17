@@ -37,7 +37,7 @@ Inclua o script do widget na sua página HTML:
 ```html
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/gh/CleberSelbetti/selbetti-agent@v1.0.24/src/selbetti-agent.js"
+  src="https://dyq0rpds5yz5d.cloudfront.net"
 ></script>
 ```
 
@@ -126,7 +126,7 @@ Você pode injetar dados dinamicamente no componente:
   <head>
     <meta charset="UTF-8" />
 
-    script type="module" src="https://dyq0rpds5yz5d.cloudfront.net"></script>
+    <script type="module" src="https://dyq0rpds5yz5d.cloudfront.net"></script>
   </head>
 
   <body>
@@ -156,7 +156,7 @@ function App() {
     script.type = "module";
     script.src =
       "https://dyq0rpds5yz5d.cloudfront.net";
-    document.body.appendChild(script);
+      document.body.appendChild(script);
   }, []);
 
   return (
