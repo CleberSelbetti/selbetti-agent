@@ -381,7 +381,7 @@ class SelbettiAgent extends HTMLElement {
 
   set data(value) {
     this._data = value;
-    this.send();
+    this.uploadFiles();
   }
 
   async uploadFiles() {
