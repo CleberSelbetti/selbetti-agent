@@ -382,8 +382,8 @@ class SelbettiAgent extends HTMLElement {
   async uploadFiles() {
     this.floatingBtn.disabled = true;
     const body = {
-      schema_file: this.schemaFile,
-      data_file: this.dataFile,
+      schema_file: JSON.stringify(this.schemaFile),
+      data_file: JSON.stringify(this.dataFile),
     };
     console.log("COMPONENTE" + body);
     const params = new URLSearchParams({
